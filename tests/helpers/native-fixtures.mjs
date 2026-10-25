@@ -1,0 +1,3 @@
+export function nativeStatus(operation_id,state='running',patch={}){
+  return {operation_id,state,elapsed_ms:0,injected_events:0,pause_revision:state==='paused'?1:0,pause_mode:state==='paused'?'manual':null,trajectory:null,resume_requirement:state==='paused'?'fresh_external_observation':null,remaining_budget_ms:100,progress:{source_units_total:1,source_units_complete:0,plan_events_inserted:0,cleanup_events_inserted:0,uncertain_unit_ids:[],remaining_frames:0,journal:[],journal_frames_total:0,journal_truncated:false,external_outcomes:[]},cleanup_confirmed:['paused','completed','cancelled','failed'].includes(state),foreground_observed:null,inputInjected:false,deliveryVerified:false,...patch};
+}
